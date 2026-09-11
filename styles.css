@@ -77,6 +77,8 @@ img {
   height: 34px;
   border: 1px solid currentColor;
   border-radius: 50%;
+  font-size: 0.62rem;
+  letter-spacing: -0.03em;
 }
 
 .nav {
@@ -139,11 +141,19 @@ img {
   text-transform: uppercase;
 }
 
+.hero .eyebrow {
+  margin-bottom: 10px;
+  font-size: clamp(2.5rem, 6.5vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-transform: none;
+}
+
 .hero h1 {
   margin: 0;
-  font-size: clamp(4rem, 12vw, 9.8rem);
-  line-height: 0.9;
-  letter-spacing: 0;
+  font-size: clamp(2.5rem, 6.5vw, 5.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
 }
 
 .hero-copy {
@@ -188,26 +198,30 @@ img {
   z-index: 3;
   right: clamp(20px, 5vw, 76px);
   bottom: 34px;
-  width: min(340px, calc(100% - 40px));
-  padding: 20px;
-  border-left: 3px solid var(--coral);
-  background: rgba(23, 32, 31, 0.72);
-  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(23, 32, 31, 0.42);
+  backdrop-filter: blur(8px);
 }
 
 .hero-panel span {
-  display: block;
-  margin-bottom: 8px;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.78rem;
-  font-weight: 800;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.68rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 }
 
-.hero-panel strong {
-  font-size: 1.05rem;
-  line-height: 1.45;
+.hero-panel .company-number {
+  padding-left: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.04em;
 }
 
 .section {
@@ -685,7 +699,8 @@ textarea {
 
   .hero-panel {
     left: 20px;
-    right: 20px;
+    right: auto;
+    max-width: calc(100% - 40px);
   }
 
   .split,
@@ -730,8 +745,9 @@ textarea {
     font-size: 0.78rem;
   }
 
+  .hero .eyebrow,
   .hero h1 {
-    font-size: clamp(2.9rem, 15vw, 3.6rem);
+    font-size: clamp(2.5rem, 12vw, 3.6rem);
   }
 
   .hero-actions {
