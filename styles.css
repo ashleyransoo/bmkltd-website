@@ -326,35 +326,32 @@ p {
   grid-row: span 2;
 }
 
+.work-card-wide {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(420px, 1fr) minmax(0, 1fr);
+  grid-template-rows: 1fr;
+}
+
 .work-visual {
   min-height: 230px;
   background-size: cover;
   background-position: center;
 }
 
-.visual-one {
-  background:
-    radial-gradient(circle at 22% 20%, rgba(221, 111, 85, 0.85), transparent 26%),
-    linear-gradient(135deg, rgba(17, 106, 102, 0.94), rgba(23, 32, 31, 0.82)),
-    repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(255, 255, 255, 0.18) 19px, transparent 20px);
+.work-visual-image {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: contain;
+  background: #08263d;
 }
 
-.visual-two {
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.82), rgba(233, 238, 233, 0.2)),
-    conic-gradient(from 110deg at 66% 44%, var(--teal), var(--gold), var(--coral), var(--teal));
-}
-
-.visual-three {
-  background:
-    radial-gradient(circle at 70% 30%, rgba(178, 139, 69, 0.8), transparent 22%),
-    linear-gradient(135deg, #1f3130, #d9ece8 52%, #dd6f55);
-}
-
-.visual-four {
-  background:
-    radial-gradient(circle at 25% 68%, rgba(221, 111, 85, 0.74), transparent 24%),
-    linear-gradient(145deg, #e9efec, #116a66 58%, #1f3130);
+.work-card-image {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1.9 / 1;
+  object-fit: cover;
 }
 
 .work-body {
@@ -472,6 +469,27 @@ p {
 
 .logo-nhs span {
   font-size: 0.92rem;
+}
+
+.logo-ukhsa {
+  gap: 7px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.logo-ukhsa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(23, 32, 31, 0.14);
+}
+
+.logo-ukhsa strong {
+  font-size: 1.72rem;
+  letter-spacing: 0.02em;
+}
+
+.logo-ukhsa span {
+  max-width: 150px;
+  font-size: 0.62rem;
+  line-height: 1.2;
 }
 
 .logo-defra strong {
@@ -777,6 +795,11 @@ textarea {
   .work-grid,
   .client-logo-wall {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work-card-wide {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
   }
 
   .metric-row div,
